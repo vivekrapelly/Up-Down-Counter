@@ -1,0 +1,24 @@
+.lib "Z:\PAVANI\PAVANI\Tools\Nanometer Technology Files\TSMC018.md"
+.tran 1n 1u
+v1 vdd GND 1.8
+v2 CLK GND PULSE (0 1.8 0 100p 100p 5n 10n)
+v3 UP GND PULSE (0 1.8 0 100p 100p 10n 20n)
+.print tran v(Up) v(CLK) v(Q0) v(Q1) v(Q2) v(Q3) v(Q4) v(Q5) v(Q6) v(Q7) v(Q8) v(Q9) v(Q10) v(Q11)
+.power v1
+.measure tran delay trig v(CLK) val=0.9 rise=1 targ v(Q11) val=0.9 fall=1
+
+.end
+.end
+
+.lib "E:\TANNER EDA\TK186668\CODE\Counter\PTM_16nm_HP.md"
+.tran 1n 1u
+v1 vdd GND 0.4
+v2 CLK GND PULSE (0 0.4 0 100p 100p 5n 10n)
+v3 UP GND PULSE (0 0.4 0 100p 100p 10n 20n)
+.print tran v(Up) v(CLK) v(Q0) v(Q1) v(Q2) v(Q3) v(Q4) v(Q5) v(Q6) v(Q7) v(Q8) v(Q9) v(Q10) v(Q11)
+.power v1
+.measure tran delay trig v(CLK) val=0.2 rise=70 targ v(Q11) val=0.2 fall=1
+
+
+.end
+
